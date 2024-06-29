@@ -1,3 +1,4 @@
+// Updating so that it is compatible with Algebraic.java
 import java.lang.Math;
 
 public class NewtonRaphson
