@@ -28,7 +28,7 @@ public class Algebraic
 	public double evalTermsDerivativeAt(double x)
 	{
 		if(exp == 0)
-			return 0;
+			return coeff;
 		
 		double eval = coeff * exp * Math.pow(x,exp-1);
 		return eval;
@@ -36,13 +36,24 @@ public class Algebraic
 	
 	public void display(int pos)
 	{
-		if(pos == 0)
+		if(pos == 0 && coeff != 1 && coeff != -1)
 			System.out.print(coeff);
+		else if(pos == 0 && coeff == -1)
+			System.out.print("-");
+		else if(pos == 0 && coeff == 1)
+			System.out.print("");
+		else if(coeff == 1)
+			System.out.print(" + ");
+		else if(coeff == -1)
+			System.out.print(" - ");
 		else if(coeff > 0)
 			System.out.print(" + "+coeff);
 		else
 			System.out.print(" - "+(-1)*coeff);
-		if(exp != 1 && exp != 0)
+		
+		if(exp == 1)
+			System.out.print(var);
+		else if(exp != 0)
 			System.out.print(var+"^("+exp+")");
 	}
 }
